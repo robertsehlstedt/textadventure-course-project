@@ -1,0 +1,18 @@
+
+---------------------------------------------------------------------------------
+NOTE: The game will only accept messages that are two words long.
+
+***COMMANDS***
+
+take <item>: Picks up item to your inventory.
+
+show info: Shows information on the current location and what items exist in it.
+
+show scores: Shows the previous highscores.
+
+open <item>: If the item is openable, it attempts to open it. Some items require keys!
+
+go <direction>: Attempts to walk in a direction. Directions being [east, west, north, south].
+
+help me: Shows this list of commands.
+---------------------------------------------------------------------------------

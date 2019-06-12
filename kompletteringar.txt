@@ -1,0 +1,33 @@
+2018-09-02
+--------------------------------------------------
+
+Felhanteringen behövde åtgärdas då spelaren inte meddelandes när någonting gick fel,
+utan fortsatte bara och ibland även satte placeholders så att spelet fortfarande körde,
+men inte som det skulle.
+Vi åtgärdade detta med att i LoggerToFile-klassen skapa en metod som kallas
+showErrorMessage(), denna kan antingen bara visa ett meddelande eller skicka ett meddelande
+och stänga ner spelet direkt efteråt.
+Metoden används varje gång det blir ett fel, och om felet är kritiskt så stängs även spelet ner.
+
+Vi hade en typkontroll som inte var särskilt snygg, där vi kollade isDirection() precis efter att ha fått
+en Direction. Detta var i utils/Interpreter och metoden move(). Enligt tipset vi fick så kollar vi nu
+bara om Direction inte är null.
+
+Tidigare användes inte getResource för att läsa in resources i spelet. Vi har ändrat detta genom att i
+utils/IOUtilities skapa en metod som kallas getInputStream(). Denna används då när vi laddar sådana
+resurser som vi inte behöver skriva till, i vårt fall ReadMe och kartor.
+För att läsa ReadMe så används den i metoden loadReadMe() i IOUtilities, och i getJsonObjectFromFile i
+MapReader för att läsa kartor.
+Vi valde att inte använda getResource för våra highscores, eftersom vi måste skriva till dessa och
+det blir mycket enklare utan getResource.
+
+Implementationen av barriärer har ändrats en del, vi har skapat ett gränssnitt Barrier som säger
+att varje barriär ska gå att öppnas, och man kan få någon typ av information som ska visas i spelet.
+Därefter ersatte vi ItemBarrier och KeylessBarrier med en GenericBarrier som då skapar en barriär.
+Om parametern key=null betyder det att den ska öppnas med hjälp av kommandot, annars en nyckel (Item).
+Detta ger möjlighet till att både utöka med flera typer av barriärer, eller utöka implementationen av
+GenericBarrier i subklasser.
+Dessa ändringar tar bort en del duplicerad kod, skapar en smidigare implementation av barriärerna
+och förenklar möjligheterna till vidareutveckling.
+
+--------------------------------------------------

@@ -1,0 +1,126 @@
+{
+ 	Location0:
+ 	{
+ 		name: "SU17/18",
+ 		x:	"0",
+ 		y:	"0",
+ 		info: "The room is filled with computers and sweat.\n",
+ 		items: [
+ 				{
+ 				name: "smallkey",
+ 				info: "You see a smallkey, it might be useful \n  for smaller locks.\n",
+ 				win: "false"
+ 				}
+ 		],
+ 		barriers: [
+ 			{
+ 				name: "backpack",
+ 				info: "You see a backpack, it seems locked.\n",
+ 				key: {
+ 					name: "smallkey"
+ 				},
+                items: [
+ 					{
+ 						name: "lunchbox",
+ 						info: "Some student forgot his lunchbox \n  in the backpack, looks nasty\n",
+ 						win: "false"
+ 					}
+ 				]
+ 			}
+ 		]
+
+ 	},
+ 	Location1:
+ 	{
+ 		name: "Hallway west",
+ 		x:	"0",
+ 		y:	"1",
+ 		info:	"You went to a long hallway, it leads east and north",
+ 		items: [],
+ 		barriers: []
+ 	},
+ 	Location2:
+ 	{
+ 		name: "Hallway North",
+ 		x: "0",
+ 		y: "2",
+ 		info: "You went to another hallway, this one leading north and south.\n  You see something interesting further north",
+ 		items: [],
+ 		barriers: []
+ 	},
+ 	Location3:
+ 	{
+ 		name: "Java",
+ 		x: "0",
+ 		y: "3",
+ 		info: "Seems to be a popular cafe during the day,\n  however it's empty right now...\n",
+ 		items: [
+ 			{
+ 			name: "cup",
+ 			info: "You see a cup\n",
+ 			win: "false"
+ 			},
+ 			{
+ 			name: "utensils",
+ 			info: " and plastic utensils\n",
+ 			win: "false"
+ 			}],
+        barriers: []
+ 	},
+ 	Location4:
+ 	{
+ 		name: "Hallway east",
+ 		x:	"1",
+ 		y:	"1",
+ 		info: "You went to another hallway, it leads west.\n  You see rooms to the north and south\n",
+ 		items:[{
+ 			name: "key",
+ 			info: "You see a key, it might open some sort of chest",
+ 			win: "false"
+ 		}],
+ 		barriers:[]
+ 	},
+ 	Location5:
+ 	{
+ 		name: "ISYTAN",
+ 		x:	"1",
+ 		y:	"0",
+ 		info:	"A popular place for students to study\n",
+ 		items:  [],
+ 		barriers: [{
+ 			name: "backpack",
+ 			info: "you see a backpack",
+ 			items: [
+ 			{	name: "book",
+ 				info: "a math book is inside the backpack\n  your PTSD comes creeping when you see it",
+ 				win: "false"
+
+ 			}
+ 			]}]
+ 	},
+ 	Location6:
+ 	{
+ 	    name: "CYD-Poolen",
+ 	    x:	"1",
+ 	    y:	"2",
+ 	    info: "A popular place for students to eat,\n  it always smells funky in here\n",
+ 	    items: [],
+	    barriers: [
+			{
+				name: "chest",
+				info: "Someone has left a chest in here...\n",
+				key: {
+					name: "key"
+				},
+			    	items: [
+					{
+						name: "note",
+						info: "You found a note saying\n 'grattis! du har fått en 5a på projektet'",
+						win: "true"
+					}
+				]
+			}
+		]
+ 	}
+
+ }
